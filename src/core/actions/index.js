@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import { PortalElement } from '../components/portal-element'
-import { clientPortalsList } from '../../index'
+import { clientPortalsList } from '../components/portals'
 
 export const hidePortalById = (portalId) => document.getElementById(portalId).remove()
 

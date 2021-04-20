@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { hidePortalByIdAction } from '../../actions'
+import { hidePortalById } from '../../actions'
 
 const RenderPortal = ({ portalId, Component, ...props }) => (
   <Component
     id={portalId}
-    close={() => hidePortalByIdAction(portalId)}
+    close={() => hidePortalById(portalId)}
     {...props}
   />
 )
