@@ -1,43 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createCustomPortal, hidePortalById } from './core/actions'
+import { Overlay } from './components/overlay'
+// import { overlayContentContainerStyle, overlayStyle } from './styles'
 
-let clientPortalsList = null
+export let clientPortalsList = null
 
-export const createPortal = ({ portalId, ...props }) => {
-  const component = <PortalElement portalId={portalId} {...props} />
-  const portalContainer = document.createElement('div')
-  portalContainer.setAttribute('id', portalId)
-  document.body.appendChild(portalContainer)
-  ReactDOM.render(component, document.getElementById(portalId))
-}
+// const createCustomPortal = ({ portalId, ...props }) => createCustomPortalAction({ portalId, portalsList: clientPortalsList, ...props })
 
-export const hidePortalById = portalId => {
-  document.getElementById(portalId).remove()
-}
-
-const RenderPortal = ({ portalId, Component, ...props }) => (
-  <Component
-    id={portalId}
-    close={() => hidePortalById(portalId)}
-    {...props}
-  />
-)
-
-export const PortalElement = ({ portalId, ...props }) => (
-  ReactDOM.createPortal(
-    <RenderPortal
-      portalId={portalId}
-      Component={clientPortalsList[portalId]}
-      {...props}
-    />,
-    document.getElementById(portalId)
-  )
-)
+// const hidePortalById = portalId => hidePortalByIdAction(portalId)
 
 const Portals = ({ portalsList }) => {
   clientPortalsList = portalsList
 
   return (<></>)
+}
+
+export {
+  createCustomPortal,
+  hidePortalById,
+  Overlay
 }
 
 export default Portals

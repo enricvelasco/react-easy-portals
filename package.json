@@ -12,9 +12,17 @@
     "type": "git",
     "url": "https://github.com/enricvelasco/react-easy-portals"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-component",
+    "modal",
+    "lightbox",
+    "react-portal",
+    "portal",
+    "transportation"
+  ],
   "author": "Enric Velasco",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
